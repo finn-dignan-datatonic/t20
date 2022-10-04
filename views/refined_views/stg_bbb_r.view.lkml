@@ -18,6 +18,30 @@ dimension: match_impact_standard_simple {
 }
 
 
+
+dimension: adjusted_rpb_to_target {
+  sql: case when ${innings} = "1st" then (${agg_ground_averages.average_first_innings_score}
+  - ${target_rpb_adjusted.running_runs_total})/(120 - ${target_rpb_adjusted.ball_number})
+
+
+  when ${innings} = "2nd" then (${adjusted_bbb_rr.target_runs}   - ${target_rpb_adjusted.running_runs_total}
+  /(120 - ${target_rpb_adjusted.ball_number})
+  END;;
+
+
+
+}
+
+
+
+dimension: match_impact_ball_adjusted {
+  sql:  ;;
+
+
+
+}
+
+
 ##### // DIMENSIONS ####
 
 

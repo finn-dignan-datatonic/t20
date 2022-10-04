@@ -8,9 +8,6 @@ view: adjusted_bbb_rr {
         value: "1st"
       }
 
-
-
-
     }
 
 
