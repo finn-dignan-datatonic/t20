@@ -67,6 +67,11 @@ view: stg_bbb {
     sql: ${TABLE}.runs_extras ;;
   }
 
+  dimension: runs_total {
+    type: number
+    sql: ${TABLE}.runs_total ;;
+  }
+
   dimension: single {
     type: number
     sql: ${TABLE}.single ;;

@@ -9,29 +9,46 @@ view: +agg_match_ups {
   #### ADDED MEASURES #####
 
   measure: m_runs_per_ball {
-    sql: sum(${runs})/sum(${balls}) ;;
+    sql: safe_divide(sum(${runs}), sum(${balls})) ;;
     label: "Runs Per Ball"
+    value_format_name: decimal_2
+    type: number
   }
 
   measure: m_average {
-    sql: sum(${runs})/sum(${outs}) ;;
+    sql: safe_divide(sum(${runs}), sum(${outs})) ;;
     label: "Average"
+    value_format_name: decimal_2
+    type: number
+
   }
 
   measure: m_boundary_percentage {
-    sql: sum(${four}, ${six})/sum(${balls}) ;;
+    sql: safe_divide(sum(${four}+ ${six}), sum(${balls})) ;;
     label: "Boundary %"
+    value_format_name: decimal_2
+    type: number
   }
 
   measure: m_dot_ball_percentage {
-    sql: sum(${spin_direction})/sum(${balls}) ;;
+    sql: safe_divide(sum(${dot_ball}), sum(${balls})) ;;
     label: "Dot Ball %"
-
-
+    value_format_name: decimal_2
+    type: number
   }
+
+  measure: m_runs {
+    sql: sum(${runs} ;;
+    label: "Runs"
+    value_format_name: decimal_2
+    type: number
+  }
+
 
 
   ###### // MEASURES #####
 
 
 }
+
+# explore: agg_match_ups {}

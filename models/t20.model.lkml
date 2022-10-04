@@ -2,6 +2,7 @@ connection: "analytics_sandbox"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/explores/*"
 
 datagroup: t20_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
