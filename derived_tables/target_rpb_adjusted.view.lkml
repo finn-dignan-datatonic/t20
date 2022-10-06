@@ -6,6 +6,7 @@ view: target_rpb_adjusted {
       column: over_number {}
       column: ball {}
       column: runs_total {}
+      column: runs_batsman {}
       column: legal_ball {}
 
 
@@ -40,7 +41,16 @@ view: target_rpb_adjusted {
   dimension: runs_total {
     type: number
   }
+
+  dimension: runs_batsman {
+    type: number
+  }
   dimension: ball_number {}
   dimension: running_runs_total {}
+  measure: count {
+    sql: count(*) ;;
+  }
 
 }
+
+explore: target_rpb_adjusted {}

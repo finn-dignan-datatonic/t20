@@ -9,8 +9,6 @@ view: adjusted_bbb_rr {
       }
 
     }
-
-
   }
   dimension: target_runs {
     sql: ${TABLE}.total_runs ;;
@@ -19,3 +17,5 @@ view: adjusted_bbb_rr {
   dimension: match_id {}
 
 }
+
+explore: adjusted_bbb_rr {}

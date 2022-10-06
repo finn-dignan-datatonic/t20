@@ -24,12 +24,12 @@ explore: stg_bbb {
   }
 
   join: target_rpb_adjusted {
-    sql_on: ${match_id} = ${adjusted_bbb_rr.match_id} AND
+    sql_on: ${stg_bbb.match_id} = ${target_rpb_adjusted.match_id} AND
     ${stg_bbb.innings} = ${target_rpb_adjusted.innings} AND
     ${stg_bbb.over_number} = ${target_rpb_adjusted.over_number} AND
     ${stg_bbb.ball} = ${target_rpb_adjusted.ball};;
-    relationship: many_to_one
-    type: left_outer
+    relationship: one_to_one
+    type: inner
   }
 
 
